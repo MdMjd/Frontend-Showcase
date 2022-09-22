@@ -1,0 +1,272 @@
+body{
+    margin: 1.5em;
+    font-family: 'Inter', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.hero-img{
+    position: absolute;
+    background: url('../images/shoe1.jpg');
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /*Allow the other elemnts to fall on top of the element*/
+    /*Animation*/
+    animation: introLoad 2s forwards;
+}
+
+.logo{
+    color: white;
+    font-weight: bold;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%; /*Relative to the screen size*/
+    z-index: 2;
+    text-transform: uppercase;
+    /*Hide and appear through an animation*/
+    transform: translateX(100%); /*Makes it disappear*/
+    transition: transform .5s ease-in-out;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0; /*There is some default padding that can be removed*/
+    margin-top: 8em;
+}
+
+nav ul a{
+    color: black;
+    padding: .75em 2em; /*Won't work unless the display is block*/
+    display: block;
+}
+
+nav ul a:hover{
+    background: rgb(222, 222, 222);
+}
+
+nav .close{
+    float: right;
+    margin: 1.5em;
+    width: 2.5em;
+}
+
+header img{
+    width: 2em;
+    margin-top: -.6em;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+
+.subhead{
+    font-size: 1.4rem;
+}
+
+section.hero{
+    color: white;
+    height: 90vh;
+    /*Fade in the icons when the page loads*/
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+section.hero .down-arrow{
+    stroke: white;
+    position: absolute;
+    bottom: 2em;
+    width: 2em;
+    animation: moveArrow 1s alternate-reverse infinite;
+}
+
+section.hero .down-arrow path{
+    fill: white;
+}
+
+.more-info img{
+    width: 100%;
+    /*It changes the image to consistent height without distorting*/
+    object-fit: cover;
+    height: 14em;
+}
+
+.more-info .title{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.more-info .desc{
+    line-height: 1.5rem;
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px) {
+    body{
+        margin: 1.5em 5em ;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .menu{
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+    
+    nav .close{
+        display: none;
+    }
+
+    header img{
+        display: none;
+    }
+
+    nav ul{
+        display: flex;
+        margin: 0;
+    }
+
+    nav ul a{
+        color: white;
+        padding: .5em 1.5em;
+        font-size: 0.9rem;
+    }
+
+    nav ul a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+
+    .hero-img{
+        left:unset;
+        right: 0;
+        width: 50%; /*Sets the image at  max width*/
+        height: 42em; /*Sets the image at  max height*/
+    }
+
+    .logo{
+        color: black;
+    }
+
+    .logo span{
+        color: red;
+    }
+
+    section.hero{
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+    }
+
+    section.hero .down-arrow{
+        stroke: black;
+        position: unset;
+    }
+    
+    section.hero .down-arrow path{
+        fill: black;
+    }
+    
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+    }
+
+    .feature img{
+        width: 25em;
+    }
+
+    .feature .content{
+        text-align: right;
+        width: 25em;
+    }
+
+    .feature.left{
+        grid-template-areas: "left right";
+    }
+
+    .feature.left img{
+        grid-area: left;
+    }
+
+    .feature.left .content{
+        text-align: left;
+        width: 25em;
+        justify-self: left;
+    }
+    
+}
+/*3rd Breakpoint where we cetnre everything when it hits 1200px*/
+@media only screen and (min-width: 1200px) {
+    .wrapper{
+        width: 1200px;
+        margin: 0 auto; /*Quick way of entering things*/
+    }
+
+    .feature{
+        gap: 0;/*Removes whitespace in between the big and meidum and content diferrence*/
+    }
+}
+
+@keyframes introLoad{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes moveArrow{
+    from{
+        transform: translateY(30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown{
+    from{
+        transform: translateY(100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

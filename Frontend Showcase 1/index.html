@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hero-img"></div>
+        <!--Navbar-->
+        <header>
+            <a href="#about" class="logo">Md<span>Mjd</span></a>
+            <nav>
+                <svg class="close" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.5 2.3125C9.56074 2.3125 2.3125 9.56074 2.3125 18.5C2.3125 27.4393 9.56074 34.6875 18.5 34.6875C27.4393 34.6875 34.6875 27.4393 34.6875 18.5C34.6875 9.56074 27.4393 2.3125 18.5 2.3125ZM24.4764 24.6498L22.0916 24.639L18.5 20.3572L14.912 24.6354L12.5236 24.6462C12.3646 24.6462 12.2346 24.5197 12.2346 24.3571C12.2346 24.2885 12.2599 24.2234 12.3032 24.1692L17.0041 18.5687L12.3032 12.9717C12.2596 12.9187 12.2353 12.8524 12.2346 12.7838C12.2346 12.6248 12.3646 12.4947 12.5236 12.4947L14.912 12.5056L18.5 16.7873L22.088 12.5092L24.4728 12.4983C24.6317 12.4983 24.7618 12.6248 24.7618 12.7874C24.7618 12.8561 24.7365 12.9211 24.6932 12.9753L19.9995 18.5723L24.6968 24.1729C24.7401 24.2271 24.7654 24.2921 24.7654 24.3607C24.7654 24.5197 24.6354 24.6498 24.4764 24.6498Z" fill="black"/>
+                </svg>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Players</a></li>
+                </ul>
+            </nav>
+            <img class="menu" src="images/icon1.svg" alt="">
+        </header>
+
+        <section class="hero">
+            <h1>Regain your confidence on the court.</h1>
+            <p class="subhead">A shoe built with purpose to take your game to the next level.</p>
+            <svg class="down-arrow" fill="none" viewBox="0 0 24 91" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9393 90.0607C11.5251 90.6464 12.4749 90.6464 13.0607 90.0607L22.6066 80.5147C23.1924 79.9289 23.1924 78.9792 22.6066 78.3934C22.0208 77.8076 21.0711 77.8076 20.4853 78.3934L12 86.8787L3.51472 78.3934C2.92893 77.8076 1.97918 77.8076 1.39339 78.3934C0.807608 78.9792 0.807608 79.9289 1.39339 80.5147L10.9393 90.0607ZM10.5 -6.55671e-08L10.5 89L13.5 89L13.5 6.55671e-08L10.5 -6.55671e-08Z" fill="black"/>
+            </svg>
+        </section>
+        <section class="more-info">
+            <div class="feature">
+                <div class="content">
+                    <p class="title">Lightweight</p>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget urna eget nisi egestas luctus. </p>
+                </div>
+                <img src="images/shoe2.jpg" alt="">
+            </div>
+            <div class="feature left">
+                <div class="content">
+                    <p class="title">Durable</p>
+                    <p class="desc">Etiam ipsum ex, viverra vitae ultrices eget, aliquet vitae justo. Ut in nulla rhoncus, sollicitudin dui ut, hendrerit elit.</p>
+                </div>
+                <img src="images/shoe3.jpg" alt="">
+            </div>
+            <div class="feature">
+                <div class="content">
+                    <p class="title">Functional</p>
+                    <p class="desc">Cras convallis ligula tempus est dignissim varius. Fusce pretium finibus nibh, sit amet pretium neque rutrum at.</p>
+                </div>
+                <img src="images/shoe4.jpg" alt="">
+            </div>
+        </section>
+    </div>
+    <script>
+        const menu = document.querySelector('.menu')
+        const close = document.querySelector('.close')
+        const nav = document.querySelector('nav')
+
+        menu.addEventListener('click', () => {
+            nav.classList.add('open-nav')
+        })
+
+        close.addEventListener('click', () => {
+            nav.classList.remove('open-nav')
+        })
+    </script>
+</body>
+</html>
